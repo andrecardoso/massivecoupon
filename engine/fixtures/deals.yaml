@@ -1,0 +1,29 @@
+- fields: {address: "Rua Quinze de Novembro, 150 Campinas, S\xE3o Jos\xE9 / SC", cell: (48)
+      3249-9000, city: 1, contact: '', email: '', fax: (48) 3249-9000, name: Divino
+      Bar Cafe, phone: (48) 3249-9000, phoneext: '', postalcode: '8810144'}
+  model: engine.advertiser
+  pk: 1
+- fields: {name: restaurantes}
+  model: engine.productcategory
+  pk: 1
+- fields: {advertiser: 1, auction_duration: 48, category: 1, city: 1, company_desc: "O\
+      \ Divino Bar Caf\xE9 disponibiliza para os clientes card\xE1pio composto por\
+      \ diversas op\xE7\xF5es de lanches, doces, salgados, massas, sopas, risotos,\
+      \ saladas, crepes, al\xE9m de outras op\xE7\xF5es de consumo.\r\n\r\nPara beber\
+      \ oferece 20 op\xE7\xF5es de caf\xE9s quentes, nove op\xE7\xF5es geladas, al\xE9\
+      m de sucos, vitaminas, refrigerantes, cervejas, chopes, coquet\xE9is entre outros.\
+      \ \r\n\r\nUm dos destaques da casa \xE9 o Caf\xE9 Divino, feito \xE0 base de\
+      \ latte suisse, leite, ovomaltine, gelo e raspas de chocolate meio amargo.\r\
+      \n\r\nComo sugest\xE3o de lanche lista o Sandu\xEDche Divino, preparado com\
+      \ p\xE3o integral, salm\xE3o grelhado, cream cheese, alface americana e molho\
+      \ shoyo. \r\n\r\nO Divino Bar Caf\xE9 tamb\xE9m proporciona atendimento para\
+      \ eventos de diversos segmentos. Maiores informa\xE7\xE3o pelo fone:", date_published: !!timestamp '2010-11-13
+      00:03:47', deal_price: '5.2', deleted_date: null, description: 'Direto de Blumenau,
+      chopp da melhor qualidade.', discount_percentage: '60', discount_value: '7.8',
+    entry_date: !!timestamp '2010-11-13 00:07:13.538689', fine_print: 2 Chopps Pilsen
+      Eisenbhan, highlights: "M\xFAsica ao vivo", image: '', is_deal_on: false, last_mod: !!timestamp '2010-11-13
+      00:07:13.538720', latitude: '1', longitude: '2', max_available: 20, retail_price: '13',
+    slug: 60-em-2-chopps, tags: '', tipped_at: !!timestamp '2010-11-16 00:00:00',
+    tipping_point: 10, title: 60% em 2 chopps}
+  model: engine.deal
+  pk: 1

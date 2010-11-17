@@ -1,0 +1,177 @@
+- model: engine.province
+  pk: 1
+  fields:
+    name: 'Acre'
+    country: 'BR'
+- model: engine.province
+  pk: 2
+  fields:
+    abbreviation: 'AL'
+    name: 'Alagoas'
+    country: 'BR'
+- model: engine.province
+  pk: 3
+  fields:
+    abbreviation: 'AP'
+    name: 'Amapá'
+    country: 'BR'
+- model: engine.province
+  pk: 4
+  fields:
+    abbreviation: 'AM'
+    name: 'Amazonas'
+    country: 'BR'
+- model: engine.province
+  pk: 5
+  fields:
+    abbreviation: 'BA'
+    name: 'Bahia'
+    country: 'BR'
+- model: engine.province
+  pk: 6
+  fields:
+    abbreviation: 'CE'
+    name: 'Ceará'
+    country: 'BR'
+- model: engine.province
+  pk: 7
+  fields:
+    abbreviation: 'DF'
+    name: 'Distrito Federal'
+    country: 'BR'
+- model: engine.province
+  pk: 8
+  fields:
+    abbreviation: 'ES'
+    name: 'Espírito Santo'
+    country: 'BR'
+- model: engine.province
+  pk: 9
+  fields:
+    abbreviation: 'GO'
+    name: 'Goiás'
+    country: 'BR'
+- model: engine.province
+  pk: 10
+  fields:
+    abbreviation: 'MA'
+    name: 'Maranhão'
+    country: 'BR'
+- model: engine.province
+  pk: 11
+  fields:
+    abbreviation: 'MT'
+    name: 'Mato Grosso'
+    country: 'BR'
+- model: engine.province
+  pk: 12
+  fields:
+    abbreviation: 'MS'
+    name: 'Mato Grosso do Sul'
+    country: 'BR'
+- model: engine.province
+  pk: 13
+  fields:
+    abbreviation: 'MG'
+    name: 'Minas Gerais'
+    country: 'BR'
+- model: engine.province
+  pk: 14
+  fields:
+    abbreviation: 'PA'
+    name: 'Pará'
+    country: 'BR'
+- model: engine.province
+  pk: 15
+  fields:
+    abbreviation: 'PB'
+    name: 'Paraíba'
+    country: 'BR'
+- model: engine.province
+  pk: 16
+  fields:
+    abbreviation: 'PR'
+    name: 'Paraná'
+    country: 'BR'
+- model: engine.province
+  pk: 17
+  fields:
+    abbreviation: 'PE'
+    name: 'Pernambuco'
+    country: 'BR'
+- model: engine.province
+  pk: 18
+  fields:
+    abbreviation: 'PI'
+    name: 'Piauí'
+    country: 'BR'
+- model: engine.province
+  pk: 19
+  fields:
+    abbreviation: 'RJ'
+    name: 'Rio de Janeiro'
+    country: 'BR'
+- model: engine.province
+  pk: 20
+  fields:
+    abbreviation: 'RN'
+    name: 'Rio Grande do Norte'
+    country: 'BR'
+- model: engine.province
+  pk: 21
+  fields:
+    abbreviation: 'RS'
+    name: 'Rio Grande do Sul'
+    country: 'BR'
+- model: engine.province
+  pk: 22
+  fields:
+    abbreviation: 'RO'
+    name: 'Rondônia'
+    country: 'BR'
+- model: engine.province
+  pk: 23
+  fields:
+    abbreviation: 'RR'
+    name: 'Roraima'
+    country: 'BR'
+- model: engine.province
+  pk: 24
+  fields:
+    abbreviation: 'SC'
+    name: 'Santa Catarina'
+    country: 'BR'
+- model: engine.province
+  pk: 25
+  fields:
+    abbreviation: 'SP'
+    name: 'São Paulo'
+    country: 'BR'
+- model: engine.province
+  pk: 26
+  fields:
+    abbreviation: 'SE'
+    name: 'Sergipe'
+    country: 'BR'
+- model: engine.province
+  pk: 27
+  fields:
+    abbreviation: 'TO'
+    name: 'Tocantins'
+    country: 'BR'
+- model: engine.city
+  pk: 1
+  fields: 
+    is_active: true
+    name: 'Florian\xF3polis'
+    order: 0
+    province: 24
+    slug: 'florianopolis'
+- model: engine.city
+  pk: 2
+  fields: 
+    is_active: true
+    name: 'Rio de Janeiro'
+    order: 1
+    province: 19
+    slug: 'rio-de-janeiro'
