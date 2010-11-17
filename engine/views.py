@@ -176,11 +176,24 @@ def index(request):
   except:
     user_msg = None
 
+  current_city = request.COOKIES['current_city'] if 'current_city' in request.COOKIES else 'florianopolis'
+
   if user_msg:
     return HttpResponseRedirect('/deals/groupon-clone/?user_msg=' + user_msg )
   else:
-    return HttpResponseRedirect('/deals/groupon-clone/' )
+    return HttpResponseRedirect('/{city_slug}/'.format(city_slug=current_city))
 
+
+def current_city(request, city_slug):
+  current_city = City.objects.get(slug=city_slug)
+  try:
+    current_deal = Deal.objects.filter(city=current_city.id).order_by('date_published')[0:1].get()
+    response = HttpResponseRedirect('/{city_slug}/deals/{deal_slug}/'.format(city_slug=current_city.slug, deal_slug=current_deal.slug))
+  except:
+    response = HttpResponseRedirect('/{city_slug}/subscribe/'.format(city_slug=current_city.slug))
+
+  response.set_cookie(key='current_city', value=current_city.slug)
+  return response
 
 #  return render_to_response('index.html', {
 #             #   'now' : now,
@@ -336,7 +349,7 @@ def deal_checkout(request, slug):
                 'cities' : cities,
               }, context_instance=RequestContext( request ) )
 
-def deal_detail(request, slug=None):
+def deal_detail(request, slug=None, city_slug=None):
 
   try:
     user_msg = request.GET.get('user_msg', None)

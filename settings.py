@@ -1,7 +1,7 @@
 # Django settings for massivecoupon project.
 import socket, os
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 

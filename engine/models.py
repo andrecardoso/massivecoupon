@@ -25,7 +25,6 @@ STATUS = (
   (STATUS_REDEEMED, "Redeemed"),
 )
 
-
 DAYS = (
     ( 1, 'Monday' ),
     ( 2, 'Tuesday' ),
@@ -35,24 +34,6 @@ DAYS = (
     ( 6, 'Saturday' ),
     ( 7, 'Sunday' ),
 )
-
-
-PROVINCES = (
-    ( 'ON' , 'Ontario' ),
-    ( 'QC' , 'Quebec'  ),
-    ( 'NS' , 'Nova Scotia' ),
-    ( 'NB' , 'New Brunswick' ),
-    ( 'MB' , 'Manitoba' ),
-    ( 'BC' , 'British Columbia' ),
-    ( 'PE' , 'Prince Edward Island' ),
-    ( 'SK' , 'Saskatchewan' ),
-    ( 'AB' , 'Alberta' ),
-    ( 'NL' , 'Newfoundland and Labrador' ),
-    ( 'YT' , 'Yukon Territory' ),
-    ( 'NT' , 'Northwest Territories' ),
-    ( 'NU' , 'Nunavut' ),
-)
-PROVINCES_d = dict(PROVINCES)
 
 CC_TYPE_VISA = 1
 CC_TYPE_MASTERCARD = 2
@@ -64,6 +45,14 @@ CC_TYPE = (
   (CC_TYPE_AMEX, 'American Express'),
 )
 
+class Province(models.Model):
+  abbreviation = models.CharField("Abbreviation", max_length=2)
+  name = models.CharField("Name", max_length=60)
+  country = models.ForeignKey(Country)
+  
+  def __unicode__(self):
+      return self.name
+
 class City(models.Model):
   """
   City database (latitude, longitude, postalcode)
@@ -72,7 +61,7 @@ class City(models.Model):
   name = models.CharField("City Name", max_length=60)
   slug = models.SlugField()
   is_active = models.BooleanField(default=False)
-  province = models.CharField("Province", max_length=2, choices=PROVINCES)
+  province = models.ForeignKey(Province)
   order = models.IntegerField(default = 0)
 
   class Meta:
@@ -87,8 +76,6 @@ class Advertiser(models.Model):
   address    = models.CharField(max_length=60)
   city       = models.ForeignKey(City)
   postalcode = models.CharField(max_length=7)
-  province   = models.CharField(max_length=25, choices=PROVINCES)
-  country    = models.ForeignKey(Country)
   phone      = models.CharField(max_length=25)
   phoneext   = models.CharField("Phone Ext", max_length=6, blank=True)
   cell       = models.CharField(max_length=25)
@@ -266,9 +253,6 @@ class Profile(models.Model):
   apt             = models.CharField("Apartment #", max_length=20)
   city            = models.ForeignKey(City)
   postalcode      = models.CharField("Postal Code", max_length=7)
-
-  province        = models.CharField(max_length=25, choices=PROVINCES)
-  country         = models.ForeignKey(Country)
 
   phone           = models.CharField(blank=True, max_length=16)
   phoneext        = models.CharField("Phone Ext", max_length=6, blank=True)

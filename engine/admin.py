@@ -28,6 +28,8 @@ class CouponAdmin(admin.ModelAdmin):
     list_per_page = 100
     search_fields = ['user', 'deal']
 
+class ProvinceAdmin(admin.ModelAdmin):
+   """admin class"""
 
 class CityAdmin(admin.ModelAdmin):
     """admin class"""
@@ -42,6 +44,7 @@ class CityAdmin(admin.ModelAdmin):
 admin.site.register(ProductCategory, ProductCategoryAdmin)
 admin.site.register(Deal, DealAdmin)
 admin.site.register(City, CityAdmin)
+admin.site.register(Province, ProvinceAdmin)
 admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Coupon, CouponAdmin)
 admin.site.register(Advertiser, AdvertiserAdmin)

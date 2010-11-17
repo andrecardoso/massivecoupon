@@ -21,9 +21,6 @@ urlpatterns = patterns('',
 
     url(r'^deals/groupon-clone/(?P<slug>\S+)/checkout/$', 'massivecoupon.engine.views.deal_checkout', name='deal_checkout'),
 
-    url(r'^deals/groupon-clone/(?P<slug>\S+)/$', 'massivecoupon.engine.views.deal_detail', name='deal_detail'),
-
-    url(r'^deals/groupon-clone/$', 'massivecoupon.engine.views.deal_detail', name='deal_detail'),
 
     # Login/logout
     url(r'^user/signup/$', 'massivecoupon.engine.views.user_signup', name='user_signup'),
@@ -40,6 +37,8 @@ urlpatterns = patterns('',
     url('^logout/$', 'socialregistration.views.logout',
         name='social_logout'),
 
+    url(r'^(?P<city_slug>\S+)/deals/(?P<slug>\S+)/$', 'massivecoupon.engine.views.deal_detail', name='deal_detail'),
+    url(r'^(?P<city_slug>\S+)/$', 'massivecoupon.engine.views.current_city', name='current_city'),
     # Static stuff (apache should serve this in production)
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.PATH_MEDIA}),
     (r'^(robots.txt)$', 'django.views.static.serve', {'document_root': '/var/www/massivecoupon/'}),
